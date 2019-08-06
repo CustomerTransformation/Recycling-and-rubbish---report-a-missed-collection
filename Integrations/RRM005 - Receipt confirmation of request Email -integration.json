@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "58a32575dd197",
+        "Name": "RRM005 - Receipt confirmation of request Email ",
+        "Type": "EMAIL",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "RubbishRecycling",
+        "data_type": "integration",
+        "allow_offline": 0,
+        "Output_template": "{\"lookup_validation\":\"0\",\"subject\":\"Confirmation of receipt of request\",\"fromName\":\"No Reply\",\"from\":\"daniel.gregory@portmouthcc.gov.uk\",\"recipients_to\":\"{email_cust}\",\"recipients_cc\":\"\",\"recipients_bcc\":\"\",\"pdf_attachments\":\"\",\"body\":\"<div style=\\\"font-family: arial, helvetica, sans-serif; font-size: 12pt;\\\">\\n<div>Dear {name_nt}</div>\\n<div></div>\\n<div>Thank you for contacting the waste service about your uncollected <span>{whatHasBeenMissed}</span>. <br /><br />Please leave it in the usual place and we will arrange for a team to collect it as soon as possible, usually on the same day you reported it. <br /><br />If we have not returned by 4pm, please take it into your property and put back out for collection, in the usual place, by 7am on the next working day. We will contact you if we are unable to complete the collection.<br /><br />Sorry for any inconvenience this may have caused.<br /><br />Yours sincerely,<br />Portsmouth City Council</div>\\n</div>\",\"attachments\":\"\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"isbat1@portsmouthcc.gov.uk\"}"
+    }
+]

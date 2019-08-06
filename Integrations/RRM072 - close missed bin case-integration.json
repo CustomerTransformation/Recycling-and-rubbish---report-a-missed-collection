@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "5b72dab641c17",
+        "Name": "RRM072 - close missed bin case",
+        "Type": "ESCALATION",
+        "LIM_id": "3f07ecf4-0dfa-11e2-b0b9-12313b03ed59",
+        "Editable": true,
+        "LIM_name": "LIM14",
+        "Category": "RubbishRecycling",
+        "data_type": "integration-lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"escalation_action\":\"close\",\"process\":\"AF-Process-253dca2f-6f92-4a6f-bf76-1e49b5235888\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+    }
+]

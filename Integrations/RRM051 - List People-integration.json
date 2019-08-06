@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "58e61c4a27a3f",
+        "Name": "RRM051 - List People",
+        "Type": "PERMISSION",
+        "LIM_id": "3f07ecf4-0dfa-11e2-b0b9-12313b03ed59",
+        "Editable": true,
+        "LIM_name": "LIM14",
+        "Category": "RubbishRecycling",
+        "data_type": "lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"lookup_validation\":\"0\",\"permission_action\":\"list_users_in_groups\",\"user_groups\":\"USERGROUP-a7a576f2-5b2e-42c6-ba77-6d75d3f85db9\",\"secure_fields_db_permission\":\"\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"isbat1@portsmouthcc.gov.uk\"}"
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "5b75848605220",
+        "Name": "RRM018 - Update Red Hanger",
+        "Type": "DATABASE",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "RubbishRecycling",
+        "data_type": "integration-lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"lookup_validation\":\"0\",\"systemID\":\"593a5fdb73ecb\",\"systemName\":\"RubbishAndRecycling\",\"query\":\"exec MissedColRedHanger \\n\\t@CaseNo = {case_ref},\\n    @UserName = {user},\\n    @RedHanger = {latestAction}\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+    }
+]
