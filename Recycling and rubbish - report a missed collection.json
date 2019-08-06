@@ -12,7 +12,7 @@
     "showCaseReference": false,
     "isPublished": true,
     "isSubform": false,
-    "notes": "update to stop loop in red hanger the latest action was being populated from previous stage",
+    "notes": "update group assignment for stages",
     "initial_stage": "Missed bin enquiry",
     "initial_stage_id": "AF-Stage-22bdcca9-32e7-4cb6-8d5e-20296e69ee9e",
     "prefix": "RR",
@@ -13855,7 +13855,7 @@
         "form": "AF-Form-af6cc0e4-0236-4d3d-84c1-240151b38037",
         "xpos": 588.9375,
         "ypos": 102.921875,
-        "group": "USERGROUP-a7a576f2-5b2e-42c6-ba77-6d75d3f85db9",
+        "group": "USERGROUP-5789d656-e694-465e-b17e-d498f64a74d7",
         "integrations": [
           {
             "id": "58fdd29e5488e",
@@ -27200,7 +27200,7 @@
         "form": "AF-Form-c02aad0b-cb7e-4d0f-b770-38401ce7b2ee",
         "xpos": 346.96183204651,
         "ypos": 382.98614501953,
-        "group": "USERGROUP-a7a576f2-5b2e-42c6-ba77-6d75d3f85db9",
+        "group": "USERGROUP-5789d656-e694-465e-b17e-d498f64a74d7",
         "integrations": [
           {
             "id": "5b72dab641c17",
@@ -30801,7 +30801,7 @@
         "form": "AF-Form-46dfcfc2-db41-46bd-be5e-98d6576628a2",
         "xpos": 1208,
         "ypos": 397,
-        "group": "USERGROUP-5eebc272-1696-46df-b9ca-b53fd9dd0b93",
+        "group": "USERGROUP-a7a576f2-5b2e-42c6-ba77-6d75d3f85db9",
         "integrations": [
           {
             "id": "5b72dab641c17",
