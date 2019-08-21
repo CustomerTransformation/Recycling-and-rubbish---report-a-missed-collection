@@ -12,7 +12,7 @@
     "showCaseReference": false,
     "isPublished": true,
     "isSubform": false,
-    "notes": "update group assignment for stages",
+    "notes": "update 2 more of the stages assigned to resource controllers only",
     "initial_stage": "Missed bin enquiry",
     "initial_stage_id": "AF-Stage-22bdcca9-32e7-4cb6-8d5e-20296e69ee9e",
     "prefix": "RR",
@@ -23072,7 +23072,7 @@
         "form": "AF-Form-a3efb8dd-90c6-4b5b-ac59-fb04336ad1dd",
         "xpos": 1760.954996109,
         "ypos": 168.92361450195,
-        "group": "USERGROUP-a7a576f2-5b2e-42c6-ba77-6d75d3f85db9",
+        "group": "USERGROUP-5789d656-e694-465e-b17e-d498f64a74d7",
         "integrations": [
           {
             "id": "5915869e1b497",
@@ -30801,7 +30801,7 @@
         "form": "AF-Form-46dfcfc2-db41-46bd-be5e-98d6576628a2",
         "xpos": 1208,
         "ypos": 397,
-        "group": "USERGROUP-a7a576f2-5b2e-42c6-ba77-6d75d3f85db9",
+        "group": "USERGROUP-5789d656-e694-465e-b17e-d498f64a74d7",
         "integrations": [
           {
             "id": "5b72dab641c17",
@@ -31736,12 +31736,12 @@
         },
         {
           "label": "Action",
-          "dataName": "actionRHnoEm",
+          "dataName": "actionWP",
           "populated": true
         },
         {
-          "label": "Comments",
-          "dataName": "comments",
+          "label": "Notes",
+          "dataName": "additionalNotesWP",
           "populated": true
         },
         {
@@ -31752,6 +31752,41 @@
         {
           "label": "Wrong place reported",
           "dataName": "wrongPlaceRep",
+          "populated": true
+        },
+        {
+          "label": "Output Table",
+          "dataName": "outputTable",
+          "populated": true
+        },
+        {
+          "label": "Dash Summary",
+          "dataName": "dashSummary",
+          "populated": true
+        },
+        {
+          "label": "sumDecision",
+          "dataName": "sumDecision",
+          "populated": true
+        },
+        {
+          "label": "New Notes",
+          "dataName": "newNotes",
+          "populated": true
+        },
+        {
+          "label": "Carry Notes",
+          "dataName": "carryNotes",
+          "populated": true
+        },
+        {
+          "label": "history",
+          "dataName": "history",
+          "populated": true
+        },
+        {
+          "label": "Complete_display",
+          "dataName": "complete_display",
           "populated": true
         }
       ]
