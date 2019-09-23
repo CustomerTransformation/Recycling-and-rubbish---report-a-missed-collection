@@ -9,7 +9,7 @@
         "Category": "RubbishRecycling",
         "data_type": "integration",
         "allow_offline": 0,
-        "Output_template": "{\"systemID\":\"593a5fdb73ecb\",\"systemName\":\"RubbishAndRecycling\",\"query\":\"EXEC MissedCollAuth\\n\\t@CaseNo = {case_ref},\\n    @Rubbish = {missedRubbish},\\n    @Recycling = {missedRecycling},\\n    @Healthcare = {missedHealthcare},\\n    @Bulky = {missedBulky},\\n    @ComRubbish = {missedComRubbish},\\n    @ComRecycling = {missedComRecycling},\\n    @DatePrevMiss = {dateOfPreviousMis},\\n    @NoPrevMissed = {howManyMissed},\\n    @UserName = {user},\\n    @RedHanger = {initRHAction}\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+        "Output_template": "{\"systemID\":\"593a5fdb73ecb\",\"systemName\":\"RubbishAndRecycling\",\"query\":\"EXEC MissedCollAuth\\n\\t@CaseNo = {case_ref},\\n    @Rubbish = {missedRubbish},\\n    @Recycling = {missedRecycling},\\n    \\n    @FoodWaste = {missedFoodWaste},\\n    \\n    @Healthcare = {missedHealthcare},\\n    @Bulky = {missedBulky},\\n    @ComRubbish = {missedComRubbish},\\n    @ComRecycling = {missedComRecycling},\\n    @DatePrevMiss = {dateOfPreviousMis},\\n    @NoPrevMissed = {howManyMissed},\\n    @UserName = {user},\\n    @RedHanger = {initRHAction}\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
         "log_only_on_error": 0,
         "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
     }
