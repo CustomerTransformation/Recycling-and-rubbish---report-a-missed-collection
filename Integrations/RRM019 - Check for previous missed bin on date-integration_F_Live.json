@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "631853150b07e",
+        "Name": "RRM019 - Check for previous missed bin on date",
+        "Type": "DATABASE",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "RubbishRecycling",
+        "data_type": "lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"systemID\":\"593a5fdb73ecb\",\"systemName\":\"RubbishAndRecycling\",\"query\":\"EXEC MissedCollEnqCheck\\n\\t@Email = {email_cust},\\n\\t@SelfDash = {SelfDash},\\n\\t@Address = {addressOfCollection},\\n\\t@Postcode = {col_post},\\n\\t@UPRN = {col_uprn},\\n\\t@ColTypes = {whatHasBeenMissed},\\n\\t@Recorded_by = {user},\\n\\t\\n    @Rubbish = {missedRubbish},\\n    @Batteries = {missedBatteries},\\n    @Recycling = {missedRecycling},\\n    @Electrical = {missedElectrical},\\n    \\n    @FoodWaste = {missedFoodWaste},\\n    @Healthcare = {missedHealthcare},\\n    @Bulky = {missedBulky},\\n    @ComRubbish = {missedComRubbish},\\n    @ComRecycling = {missedComRecycling},\\n    @RedHanger = {initRHAction},\\n    @Road = {Road_db},\\n    \\n\\t@rubColDate = {sfRubbish/dateOfMissedCol},\\n\\t@batColDate = {sfBatteries/dateOfMissedCol},\\n\\t@recColDate = {sfRecycling/dateOfMissedCol},\\n\\t@elecColDate = {sfElectrical/dateOfMissedCol},\\n\\t\\n\\t@fooColDate = {sfFoodWaste/dateOfMissedCol},\\n\\t@heaColDate = {sfHealthcare/dateOfMissedCol},\\n\\t@bulColDate = {dateOfMisdBulk},\\n\\t@comRubColDate = {dateOfMisdCRub},\\n\\t@comRecColDate = {dateOfMisdCRec},\\n\\t\\n\\t@lst_canKeep = {canKeepList}\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+    }
+]

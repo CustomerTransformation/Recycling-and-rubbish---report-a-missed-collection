@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "58a464fba4737",
+        "Name": "RRM011 - Back Office Auth",
+        "Type": "DATABASE",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "RubbishRecycling",
+        "data_type": "integration",
+        "allow_offline": 0,
+        "Output_template": "{\"systemID\":\"593a5fdb73ecb\",\"systemName\":\"RubbishAndRecycling\",\"query\":\"EXEC MissedCollAuth\\n\\t@CaseNo = {case_ref},\\n\\t\\n    @Rubbish = {missedRubbish},\\n    @Batteries = {missedBatteries},\\n    @Recycling = {missedRecycling},\\n    @Electrical = {missedElectrical},\\n    \\n    @FoodWaste = {missedFoodWaste},\\n    @Healthcare = {missedHealthcare},\\n    @Bulky = {missedBulky},\\n    @ComRubbish = {missedComRubbish},\\n    @ComRecycling = {missedComRecycling},\\n    @DatePrevMiss = {dateOfPreviousMis},\\n    @NoPrevMissed = {howManyMissed},\\n    @UserName = {user},\\n    @RedHanger = {initRHAction},\\n    @taskID = {task_id}\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+    }
+]
