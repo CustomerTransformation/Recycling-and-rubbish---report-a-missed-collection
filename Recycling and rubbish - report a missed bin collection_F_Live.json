@@ -25,7 +25,7 @@
       "name": "Missed bin enquiry",
       "props": {
         "form": "AF-Form-2c4cb728-d3ec-4287-9db9-c7b13652b147",
-        "xpos": 59.96875,
+        "xpos": 57.96875,
         "ypos": 15.921875,
         "group": "",
         "integrations": [
@@ -465,6 +465,45 @@
                 "log_only_on_error": 0,
                 "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
               },
+              "640859a7264a3": {
+                "Editable": true,
+                "ID": "640859a7264a3",
+                "Name": "RRM028 - Fill in last Refuse Date",
+                "Type": "DATABASE",
+                "LIM_name": "LIM14",
+                "Category": "RubbishRecycling",
+                "data_type": "lookup",
+                "allow_offline": 0,
+                "Output_template": "{\"systemID\":\"59dc224eb4f63\",\"systemName\":\"Granicus Solutions Read\",\"query\":\"SELECT {lastRefDate} as dateLast\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+                "log_only_on_error": 0,
+                "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+              },
+              "640863ba6c03d": {
+                "Editable": true,
+                "ID": "640863ba6c03d",
+                "Name": "RRM029 - Fill in last Recycling Date",
+                "Type": "DATABASE",
+                "LIM_name": "LIM14",
+                "Category": "RubbishRecycling",
+                "data_type": "lookup",
+                "allow_offline": 0,
+                "Output_template": "{\"systemID\":\"59dc224eb4f63\",\"systemName\":\"Granicus Solutions Read\",\"query\":\"SELECT {lastRecDate} as dateLast\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+                "log_only_on_error": 0,
+                "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+              },
+              "640863d46ef6a": {
+                "Editable": true,
+                "ID": "640863d46ef6a",
+                "Name": "RRM030 - Fill in last Food Waste Date",
+                "Type": "DATABASE",
+                "LIM_name": "LIM14",
+                "Category": "RubbishRecycling",
+                "data_type": "lookup",
+                "allow_offline": 0,
+                "Output_template": "{\"systemID\":\"59dc224eb4f63\",\"systemName\":\"Granicus Solutions Read\",\"query\":\"SELECT {lastFWDate} as dateLast\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+                "log_only_on_error": 0,
+                "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+              },
               "5d8dd260745e0": {
                 "Editable": true,
                 "ID": "5d8dd260745e0",
@@ -536,7 +575,7 @@
                     "outerClass": "",
                     "width": "",
                     "showInSummary": false,
-                    "content": "{#testFormWarn} \n<p><strong>If you think your waste collection has been missed, you can let us know by completing this form.</strong></p>\n<br />\n<p>Before you start, please check that:</p>\n<ul>\n    <li>You are sure of the collection day.</li>\n    <li>The waste type (rubbish, recycling, bulky waste or healthcare) is only from a household and contains this type of waste <strong>only</strong>, as there are some types of waste that we don't collect.  You can find more information about this below.</li>\n    <li>If there is a red hanger on your recycling bin, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/recycling-and-rubbish/recycling#hanger\">find out what you can recycle at home</a>.</li>\n</ul>\n<br />\n<p>Find out more about <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/rubbish\">rubbish</a>, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/recycling\">recycling</a> or <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/other-waste\">other waste collections</a>.</p>\n<br />\n\n<p style=\"color:blue\"><strong>Important notice:</strong> all missed collections must be reported within 2 working days of the scheduled collection date. If it is reported later, we will not return.</p>\n\n<p style=\"color:blue\">Please do not report the same missed collection several times as it only duplicates the information and slows down our response time.</p>",
+                    "content": "{#testFormWarn} \n<p><strong>If you think your waste collection has been missed, you can let us know by completing this form.</strong></p>\n<br />\n<p>Before you start, please check that:</p>\n<ul>\n    <li>You are sure of the collection day.</li>\n    <li>The waste type (rubbish, recycling, bulky waste or healthcare) is only from a household and contains this type of waste <strong>only</strong>, as there are some types of waste that we don't collect.  You can find more information about this below.</li>\n    <li>If there is a red hanger on your recycling bin, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/recycling-and-rubbish/recycling#hanger\">find out what you can recycle at home</a>.</li>\n</ul>\n<br />\n<p>Find out more about <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/rubbish\">rubbish</a>, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/recycling\">recycling</a> or <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/other-waste\">other waste collections</a>.</p>\n<br />\n\n<!--<p style=\"color:blue\"><strong>Important notice:</strong> all missed collections must be reported within 2 working days of the scheduled collection date. If it is reported later, we will not return.</p>\n\n<p style=\"color:blue\">Please do not report the same missed collection several times as it only duplicates the information and slows down our response time.</p>-->",
                     "displayCondition": null
                   },
                   "conditionInputs": [],
@@ -2944,18 +2983,18 @@
                                 "hidden": false,
                                 "readOnly": false,
                                 "summaryField": false,
-                                "displayName": true,
-                                "outerClass": null,
-                                "labelClass": null,
-                                "inputClass": null,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
                                 "outputFormat": "normal",
-                                "currencyPrefix": null,
-                                "width": null,
-                                "inputMask": null,
-                                "inputMaskPlaceholder": null,
-                                "lengthCount": null,
-                                "hideWhenBlank": null,
-                                "displayCondition": "{overseas} is '1'",
+                                "currencyPrefix": "",
+                                "width": "8",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "{overseas} is '1' and {AddressIn} notcontains '0'",
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
@@ -2988,6 +3027,124 @@
                                 {
                                   "element": "number",
                                   "value": "1",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "AddressIn",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "notcontains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "0",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-79ed8d10-1ebb-4d18-bcef-a3e30cb69c50",
+                              "props": {
+                                "label": "Portsmouth postcode",
+                                "dataName": "postcode_out52",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "outputFormat": "normal",
+                                "currencyPrefix": "",
+                                "width": "8",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "{overseas} is '1' and {AddressIn} contains '0'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "_custom_regex_",
+                                "mandatoryMessage": "Please enter a Postcode for example 'PO1 2AL' ",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "Please enter a Portsmouth Postcode for example 'PO1 2AL' ",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "{subParam} contains 'mPo' or {subParam} contains 'mAd'",
+                                "readonlyCondition": "{showAd} contains 'RO'",
+                                "_custom_regex_": "^(([Pp][Oo])[1-6][_ ]([0-9][ABD-Habd-hJLNP-Ujlnp-uW-Zw-z]{2}))|(([Pp][Oo])[7][_ ][5](([Aa][TUXYZtuxyz])|([Bb][ASTUastu])))$"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "overseas",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "is",
+                                  "type": [
+                                    "_number"
+                                  ]
+                                },
+                                {
+                                  "element": "number",
+                                  "value": "1",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "AddressIn",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "0",
                                   "type": [
                                     "literal"
                                   ]
@@ -6455,10 +6612,78 @@
                             {
                               "type": "textarea",
                               "props": {
+                                "label": "SF Summary calc",
+                                "dataName": "SF_SumCalc",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "concat(\nif({subParam} contains 'dNm' or {subParam} contains 'dFn' or {subParam} contains 'dLn',\nconcat('Name',{#TRD},if({Title_out}!='',concat({Title_out:display},' '),''),if({First_Name_out}!='',concat({First_Name_out},' '),''),if({middleNames}!='',concat({middleNames},' '),''),if({Surname_out}!='',{Surname_out},''),{#TRC},{#TRS})\n,''),\nif({showAd} contains 'ShowRO',\nconcat('Address',{#TRD},{AdTextArea_out},{#TRC},{#TRS})\n,''),\nif({Date_Of_Birth_out}!='',\nconcat('Date of Birth',{#TRD},dateFormat({Date_Of_Birth_out},'dd/MM/yyyy'),{#TRC},{#TRS})\n,''),\nif({age_out}!='',\nconcat('Age',{#TRD},{age_out},{#TRC},{#TRS})\n,''),\nif({gender_out}!='',\nconcat('Gender',{#TRD},{gender_out},{#TRC},{#TRS})\n,''),\nif({Email_Address_out}!='',\nconcat('Email address',{#TRD},{Email_Address_out},{#TRC},{#TRS})\n,''),\nif({Phone_Number_out}!='',\nconcat('Telephone number',{#TRD},{Phone_Number_out},{#TRC},{#TRS})\n,''),\nif({Mobile_Number_out}!='',\nconcat('Mobile number',{#TRD},{Mobile_Number_out},{#TRC},{#TRS}),''),\nif({pcm_display_out}!='',\nconcat('Preferred method of contact',{#TRD},{pcm_display_out:display},{#TRC},{#TRS}),''))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-195f24a7-0621-4ba4-8008-71f2fbc4eb8c"
+                            },
+                            {
+                              "type": "textarea",
+                              "props": {
+                                "label": "SF Summary rows",
+                                "dataName": "SF_SumTR",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "substr ({SF_SumCalc},0,length({SF_SumCalc})-18)",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-94f06eee-ac3a-4cd8-9e41-af43ac536fc8"
+                            },
+                            {
+                              "type": "textarea",
+                              "props": {
                                 "label": "SF Summary",
                                 "dataName": "SF_Sum",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#TTS},\nif({subParam} contains 'dNm' or {subParam} contains 'dFn' or {subParam} contains 'dLn',\nconcat({#TRS},'Name',{#TRD},if({Title_out}!='',concat({Title_out:display},' '),''),if({First_Name_out}!='',concat({First_Name_out},' '),''),if({middleNames}!='',concat({middleNames},' '),''),if({Surname_out}!='',{Surname_out},''),{#TRC})\n,''),\nif({showAd} contains 'ShowRO',\nconcat({#TRS},'Address',{#TRD},{AdTextArea_out},{#TRC})\n,''),\nif({Date_Of_Birth_out}!='',\nconcat({#TRS},'Date of Birth',{#TRD},dateFormat({Date_Of_Birth_out},'dd/MM/yyyy'),{#TRC})\n,''),\nif({age_out}!='',\nconcat({#TRS},'Age',{#TRD},{age_out},{#TRC})\n,''),\nif({gender_out}!='',\nconcat({#TRS},'Gender',{#TRD},{gender_out},{#TRC})\n,''),\nif({Email_Address_out}!='',\nconcat({#TRS},'Email address',{#TRD},{Email_Address_out},{#TRC})\n,''),\nif({Phone_Number_out}!='',\nconcat({#TRS},'Telephone number',{#TRD},{Phone_Number_out},{#TRC})\n,''),\nif({Mobile_Number_out}!='',\nconcat({#TRS},'Mobile number',{#TRD},{Mobile_Number_out},{#TRC}),''),\nif({pcm_display_out}!='',\nconcat({#TRS},'Preferred method of contact',{#TRD},{pcm_display_out:display},{#TRC}),''),{#TTC})",
+                                "defaultValue": "concat({#TTS},{#TRS},{#SF_SumTR},{#TRC},{#TTC})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -8027,18 +8252,18 @@
                                 "hidden": false,
                                 "readOnly": false,
                                 "summaryField": false,
-                                "displayName": true,
-                                "outerClass": null,
-                                "labelClass": null,
-                                "inputClass": null,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
                                 "outputFormat": "normal",
-                                "currencyPrefix": null,
-                                "width": null,
-                                "inputMask": null,
-                                "inputMaskPlaceholder": null,
-                                "lengthCount": null,
-                                "hideWhenBlank": null,
-                                "displayCondition": "{overseas} is '1'",
+                                "currencyPrefix": "",
+                                "width": "8",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "{overseas} is '1' and {checkAddressIn} notcontains '0'",
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
@@ -8071,6 +8296,124 @@
                                 {
                                   "element": "number",
                                   "value": "1",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "checkAddressIn",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "notcontains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "0",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "AF-Field-859b5019-5648-4205-80c6-3e8edadf035c",
+                              "props": {
+                                "label": "Portsmouth postcode",
+                                "dataName": "postcode_out52",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "",
+                                "helpText": "",
+                                "hidden": false,
+                                "readOnly": false,
+                                "summaryField": false,
+                                "displayName": "true",
+                                "outerClass": "",
+                                "labelClass": "",
+                                "inputClass": "",
+                                "outputFormat": "normal",
+                                "currencyPrefix": "",
+                                "width": "8",
+                                "inputMask": "",
+                                "inputMaskPlaceholder": "",
+                                "lengthCount": false,
+                                "hideWhenBlank": false,
+                                "displayCondition": "{overseas} is '1' and {checkAddressIn} contains '0'",
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "_custom_regex_",
+                                "mandatoryMessage": "Please enter a Postcode for example 'PO1 2AL' ",
+                                "minimumLengthMessage": "This Field Requires More Text",
+                                "maximumLengthMessage": "This Field Requires Less Text",
+                                "validationMaskMessage": "Please enter a Portsmouth Postcode for example 'PO1 2AL' ",
+                                "validationConditionMessage": "This Field Is Invalid",
+                                "mandatoryCondition": "{subParam} contains 'mPo' or {subParam} contains 'mAd'",
+                                "readonlyCondition": "{showAd} contains 'RO'",
+                                "_custom_regex_": "^(([Pp][Oo])[1-6][_ ]([0-9][ABD-Habd-hJLNP-Ujlnp-uW-Zw-z]{2}))|(([Pp][Oo])[7][_ ][5](([Aa][TUXYZtuxyz])|([Bb][ASTUastu])))$"
+                              },
+                              "conditionInputs": [
+                                {
+                                  "element": "select",
+                                  "value": "overseas",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "is",
+                                  "type": [
+                                    "_number"
+                                  ]
+                                },
+                                {
+                                  "element": "number",
+                                  "value": "1",
+                                  "type": [
+                                    "literal"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "and",
+                                  "type": [
+                                    "logicalOperators"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "checkAddressIn",
+                                  "type": [
+                                    "fields"
+                                  ]
+                                },
+                                {
+                                  "element": "select",
+                                  "value": "contains",
+                                  "type": [
+                                    "_core"
+                                  ]
+                                },
+                                {
+                                  "element": "text",
+                                  "value": "0",
                                   "type": [
                                     "literal"
                                   ]
@@ -9281,12 +9624,46 @@
                               "type": "textarea",
                               "props": {
                                 "label": "SF Summary",
-                                "dataName": "SF_Sum",
+                                "dataName": "SF_SumTR",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({showAd} contains 'ShowRO',\nconcat({#TTS},{#TRS},'Address',{#TRD},{AdTextArea_out},{#TRC},{#TTC}),'')",
+                                "defaultValue": "if({showAd} contains 'ShowRO',\nconcat('Address',{#TRD},{AdTextArea_out}),'')",
                                 "helpText": "",
                                 "hidden": true,
-                                "readOnly": false,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This field is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationMaskMessageValue": "Select..."
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-a0c3e7d8-80ed-4d93-9f7c-8b0dd2343e8f"
+                            },
+                            {
+                              "type": "textarea",
+                              "props": {
+                                "label": "SF Summary",
+                                "dataName": "SF_Sum",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({showAd} contains 'ShowRO',\nconcat({#TTS},{#TRS},{SF_SumTR},{#TRC},{#TTC}),'')",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
                                 "summaryField": false,
                                 "displayName": true,
                                 "outerClass": null,
@@ -10095,6 +10472,108 @@
                   },
                   "conditionInputs": [],
                   "id": "AF-Field-5786174d-9bc7-4e87-ab1b-483117ef516e"
+                },
+                {
+                  "type": "date",
+                  "props": {
+                    "label": "Last Refuse collection date",
+                    "dataName": "lastRefDate",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "specific",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "hideWhenBlank": null,
+                    "displayAsSeparated": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumValue": "",
+                    "maximumValue": "",
+                    "dateFormat": "dd/MM/yyyy",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-f79b386f-b2bf-488e-ab91-5a9397229a6e"
+                },
+                {
+                  "type": "date",
+                  "props": {
+                    "label": "Last Recycling collection date",
+                    "dataName": "lastRecDate",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "specific",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "hideWhenBlank": null,
+                    "displayAsSeparated": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumValue": "",
+                    "maximumValue": "",
+                    "dateFormat": "dd/MM/yyyy",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-853fad11-aeaf-4870-9a03-fc07b4ae3fa5"
+                },
+                {
+                  "type": "date",
+                  "props": {
+                    "label": "Last Food Waste collection date",
+                    "dataName": "lastFWDate",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "specific",
+                    "defaultValue": "",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "hideWhenBlank": null,
+                    "displayAsSeparated": null,
+                    "displayCondition": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumValue": "",
+                    "maximumValue": "",
+                    "dateFormat": "dd/MM/yyyy",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-691318d0-04b5-4701-a2e0-215ffa25fee3"
                 }
               ]
             },
@@ -10512,9 +10991,9 @@
                     "formName": "SF Missed bin collection missed details",
                     "form": "AF-Form-b2626ae9-766f-462e-988d-f83d474008f8",
                     "displayStyle": "summary",
-                    "lookup": "",
+                    "lookup": "640859a7264a3",
                     "lookupCondition": "once",
-                    "preventRunningOnInitialisation": false,
+                    "preventRunningOnInitialisation": true,
                     "lookupButton": null,
                     "noResultsMessage": "",
                     "hidden": false,
@@ -10619,11 +11098,45 @@
                             {
                               "type": "date",
                               "props": {
-                                "label": "Date of missed collection",
-                                "dataName": "dateOfMissedCol",
+                                "label": "Date from collection days lookup",
+                                "dataName": "dateLast",
                                 "labelPosition": "alignLeft",
                                 "defaultType": "specific",
                                 "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "hideWhenBlank": null,
+                                "displayAsSeparated": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "dateFormat": "dd/MM/yyyy",
+                                "mandatoryMessage": "This field is required",
+                                "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                                "maximumValueMessage": "Please input a date no later than _max_value_",
+                                "dateFormatMessage": "Please input a date in the format _date_format_"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-349ae987-80b7-4307-b818-93f73139d3a2"
+                            },
+                            {
+                              "type": "date",
+                              "props": {
+                                "label": "Date of missed collection",
+                                "dataName": "dateOfMissedCol",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": "{dateLast}",
                                 "helpText": "",
                                 "hidden": false,
                                 "readOnly": false,
@@ -10678,7 +11191,7 @@
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
-                                "validationCondition": "{dateOfMissedCol} <= {maxDate}",
+                                "validationCondition": "{dateOfMissedCol} <= {maxDate} or {allowReportBefore} = 'yes'",
                                 "validationMask": "",
                                 "mandatoryMessage": "This field is required",
                                 "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -10688,6 +11201,55 @@
                                 "validationMaskMessageValue": "Select..."
                               },
                               "id": "AF-Field-c2164d16-0637-478e-a884-32f0e8d6d588"
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Allow report before 3pm",
+                                "dataName": "allowReportBefore",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Let me log - I confirm I have checked Biffa.net",
+                                    "value": "yes"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "vertical",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": null,
+                                "displayCondition": "{checkAllowToday} isnt '' and {product} = 'Dash'",
+                                "selectCondition": null,
+                                "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This field is required"
+                              },
+                              "id": "AF-Field-63315f8f-36f4-443c-bc35-52249b79807b"
                             },
                             {
                               "type": "text",
@@ -10987,7 +11549,7 @@
                                 "label": "Not Straightforward",
                                 "dataName": "notStreight",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),{#ULE},{#DE})",
+                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),\n           if({dateLast} <> {dateOfMissedCol}, if({dateLast} = '',\n\t\t\t\t\tconcat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system')),''),{#ULE},{#DE})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -11021,7 +11583,7 @@
                                 "label": "Need Checking",
                                 "dataName": "needCheck",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate},1,0)",
+                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -11258,9 +11820,9 @@
                     "formName": "SF Missed bin collection missed details",
                     "form": "AF-Form-b2626ae9-766f-462e-988d-f83d474008f8",
                     "displayStyle": "summary",
-                    "lookup": "",
+                    "lookup": "640859a7264a3",
                     "lookupCondition": "once",
-                    "preventRunningOnInitialisation": false,
+                    "preventRunningOnInitialisation": true,
                     "lookupButton": null,
                     "noResultsMessage": "",
                     "hidden": false,
@@ -11365,11 +11927,45 @@
                             {
                               "type": "date",
                               "props": {
-                                "label": "Date of missed collection",
-                                "dataName": "dateOfMissedCol",
+                                "label": "Date from collection days lookup",
+                                "dataName": "dateLast",
                                 "labelPosition": "alignLeft",
                                 "defaultType": "specific",
                                 "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "hideWhenBlank": null,
+                                "displayAsSeparated": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "dateFormat": "dd/MM/yyyy",
+                                "mandatoryMessage": "This field is required",
+                                "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                                "maximumValueMessage": "Please input a date no later than _max_value_",
+                                "dateFormatMessage": "Please input a date in the format _date_format_"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-349ae987-80b7-4307-b818-93f73139d3a2"
+                            },
+                            {
+                              "type": "date",
+                              "props": {
+                                "label": "Date of missed collection",
+                                "dataName": "dateOfMissedCol",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": "{dateLast}",
                                 "helpText": "",
                                 "hidden": false,
                                 "readOnly": false,
@@ -11424,7 +12020,7 @@
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
-                                "validationCondition": "{dateOfMissedCol} <= {maxDate}",
+                                "validationCondition": "{dateOfMissedCol} <= {maxDate} or {allowReportBefore} = 'yes'",
                                 "validationMask": "",
                                 "mandatoryMessage": "This field is required",
                                 "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -11434,6 +12030,55 @@
                                 "validationMaskMessageValue": "Select..."
                               },
                               "id": "AF-Field-c2164d16-0637-478e-a884-32f0e8d6d588"
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Allow report before 3pm",
+                                "dataName": "allowReportBefore",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Let me log - I confirm I have checked Biffa.net",
+                                    "value": "yes"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "vertical",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": null,
+                                "displayCondition": "{checkAllowToday} isnt '' and {product} = 'Dash'",
+                                "selectCondition": null,
+                                "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This field is required"
+                              },
+                              "id": "AF-Field-63315f8f-36f4-443c-bc35-52249b79807b"
                             },
                             {
                               "type": "text",
@@ -11733,7 +12378,7 @@
                                 "label": "Not Straightforward",
                                 "dataName": "notStreight",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),{#ULE},{#DE})",
+                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),\n           if({dateLast} <> {dateOfMissedCol}, if({dateLast} = '',\n\t\t\t\t\tconcat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system')),''),{#ULE},{#DE})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -11767,7 +12412,7 @@
                                 "label": "Need Checking",
                                 "dataName": "needCheck",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate},1,0)",
+                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -11973,9 +12618,9 @@
                     "formName": "SF Missed bin collection missed details",
                     "form": "AF-Form-b2626ae9-766f-462e-988d-f83d474008f8",
                     "displayStyle": "summary",
-                    "lookup": "",
+                    "lookup": "640863ba6c03d",
                     "lookupCondition": "once",
-                    "preventRunningOnInitialisation": false,
+                    "preventRunningOnInitialisation": true,
                     "lookupButton": null,
                     "noResultsMessage": "",
                     "hidden": false,
@@ -12080,11 +12725,45 @@
                             {
                               "type": "date",
                               "props": {
-                                "label": "Date of missed collection",
-                                "dataName": "dateOfMissedCol",
+                                "label": "Date from collection days lookup",
+                                "dataName": "dateLast",
                                 "labelPosition": "alignLeft",
                                 "defaultType": "specific",
                                 "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "hideWhenBlank": null,
+                                "displayAsSeparated": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "dateFormat": "dd/MM/yyyy",
+                                "mandatoryMessage": "This field is required",
+                                "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                                "maximumValueMessage": "Please input a date no later than _max_value_",
+                                "dateFormatMessage": "Please input a date in the format _date_format_"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-349ae987-80b7-4307-b818-93f73139d3a2"
+                            },
+                            {
+                              "type": "date",
+                              "props": {
+                                "label": "Date of missed collection",
+                                "dataName": "dateOfMissedCol",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": "{dateLast}",
                                 "helpText": "",
                                 "hidden": false,
                                 "readOnly": false,
@@ -12139,7 +12818,7 @@
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
-                                "validationCondition": "{dateOfMissedCol} <= {maxDate}",
+                                "validationCondition": "{dateOfMissedCol} <= {maxDate} or {allowReportBefore} = 'yes'",
                                 "validationMask": "",
                                 "mandatoryMessage": "This field is required",
                                 "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -12149,6 +12828,55 @@
                                 "validationMaskMessageValue": "Select..."
                               },
                               "id": "AF-Field-c2164d16-0637-478e-a884-32f0e8d6d588"
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Allow report before 3pm",
+                                "dataName": "allowReportBefore",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Let me log - I confirm I have checked Biffa.net",
+                                    "value": "yes"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "vertical",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": null,
+                                "displayCondition": "{checkAllowToday} isnt '' and {product} = 'Dash'",
+                                "selectCondition": null,
+                                "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This field is required"
+                              },
+                              "id": "AF-Field-63315f8f-36f4-443c-bc35-52249b79807b"
                             },
                             {
                               "type": "text",
@@ -12448,7 +13176,7 @@
                                 "label": "Not Straightforward",
                                 "dataName": "notStreight",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),{#ULE},{#DE})",
+                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),\n           if({dateLast} <> {dateOfMissedCol}, if({dateLast} = '',\n\t\t\t\t\tconcat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system')),''),{#ULE},{#DE})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -12482,7 +13210,7 @@
                                 "label": "Need Checking",
                                 "dataName": "needCheck",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate},1,0)",
+                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -12720,9 +13448,9 @@
                     "formName": "SF Missed bin collection missed details",
                     "form": "AF-Form-b2626ae9-766f-462e-988d-f83d474008f8",
                     "displayStyle": "summary",
-                    "lookup": "",
+                    "lookup": "640863ba6c03d",
                     "lookupCondition": "once",
-                    "preventRunningOnInitialisation": false,
+                    "preventRunningOnInitialisation": true,
                     "lookupButton": null,
                     "noResultsMessage": "",
                     "hidden": false,
@@ -12827,11 +13555,45 @@
                             {
                               "type": "date",
                               "props": {
-                                "label": "Date of missed collection",
-                                "dataName": "dateOfMissedCol",
+                                "label": "Date from collection days lookup",
+                                "dataName": "dateLast",
                                 "labelPosition": "alignLeft",
                                 "defaultType": "specific",
                                 "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "hideWhenBlank": null,
+                                "displayAsSeparated": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "dateFormat": "dd/MM/yyyy",
+                                "mandatoryMessage": "This field is required",
+                                "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                                "maximumValueMessage": "Please input a date no later than _max_value_",
+                                "dateFormatMessage": "Please input a date in the format _date_format_"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-349ae987-80b7-4307-b818-93f73139d3a2"
+                            },
+                            {
+                              "type": "date",
+                              "props": {
+                                "label": "Date of missed collection",
+                                "dataName": "dateOfMissedCol",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": "{dateLast}",
                                 "helpText": "",
                                 "hidden": false,
                                 "readOnly": false,
@@ -12886,7 +13648,7 @@
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
-                                "validationCondition": "{dateOfMissedCol} <= {maxDate}",
+                                "validationCondition": "{dateOfMissedCol} <= {maxDate} or {allowReportBefore} = 'yes'",
                                 "validationMask": "",
                                 "mandatoryMessage": "This field is required",
                                 "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -12896,6 +13658,55 @@
                                 "validationMaskMessageValue": "Select..."
                               },
                               "id": "AF-Field-c2164d16-0637-478e-a884-32f0e8d6d588"
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Allow report before 3pm",
+                                "dataName": "allowReportBefore",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Let me log - I confirm I have checked Biffa.net",
+                                    "value": "yes"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "vertical",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": null,
+                                "displayCondition": "{checkAllowToday} isnt '' and {product} = 'Dash'",
+                                "selectCondition": null,
+                                "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This field is required"
+                              },
+                              "id": "AF-Field-63315f8f-36f4-443c-bc35-52249b79807b"
                             },
                             {
                               "type": "text",
@@ -13195,7 +14006,7 @@
                                 "label": "Not Straightforward",
                                 "dataName": "notStreight",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),{#ULE},{#DE})",
+                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),\n           if({dateLast} <> {dateOfMissedCol}, if({dateLast} = '',\n\t\t\t\t\tconcat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system')),''),{#ULE},{#DE})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -13229,7 +14040,7 @@
                                 "label": "Need Checking",
                                 "dataName": "needCheck",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate},1,0)",
+                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -13414,9 +14225,9 @@
                     "formName": "SF Missed bin collection missed details",
                     "form": "AF-Form-b2626ae9-766f-462e-988d-f83d474008f8",
                     "displayStyle": "summary",
-                    "lookup": "",
+                    "lookup": "640863d46ef6a",
                     "lookupCondition": "once",
-                    "preventRunningOnInitialisation": false,
+                    "preventRunningOnInitialisation": true,
                     "lookupButton": null,
                     "noResultsMessage": "",
                     "hidden": false,
@@ -13521,11 +14332,45 @@
                             {
                               "type": "date",
                               "props": {
-                                "label": "Date of missed collection",
-                                "dataName": "dateOfMissedCol",
+                                "label": "Date from collection days lookup",
+                                "dataName": "dateLast",
                                 "labelPosition": "alignLeft",
                                 "defaultType": "specific",
                                 "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "hideWhenBlank": null,
+                                "displayAsSeparated": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "dateFormat": "dd/MM/yyyy",
+                                "mandatoryMessage": "This field is required",
+                                "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                                "maximumValueMessage": "Please input a date no later than _max_value_",
+                                "dateFormatMessage": "Please input a date in the format _date_format_"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-349ae987-80b7-4307-b818-93f73139d3a2"
+                            },
+                            {
+                              "type": "date",
+                              "props": {
+                                "label": "Date of missed collection",
+                                "dataName": "dateOfMissedCol",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": "{dateLast}",
                                 "helpText": "",
                                 "hidden": false,
                                 "readOnly": false,
@@ -13580,7 +14425,7 @@
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
-                                "validationCondition": "{dateOfMissedCol} <= {maxDate}",
+                                "validationCondition": "{dateOfMissedCol} <= {maxDate} or {allowReportBefore} = 'yes'",
                                 "validationMask": "",
                                 "mandatoryMessage": "This field is required",
                                 "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -13590,6 +14435,55 @@
                                 "validationMaskMessageValue": "Select..."
                               },
                               "id": "AF-Field-c2164d16-0637-478e-a884-32f0e8d6d588"
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Allow report before 3pm",
+                                "dataName": "allowReportBefore",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Let me log - I confirm I have checked Biffa.net",
+                                    "value": "yes"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "vertical",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": null,
+                                "displayCondition": "{checkAllowToday} isnt '' and {product} = 'Dash'",
+                                "selectCondition": null,
+                                "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This field is required"
+                              },
+                              "id": "AF-Field-63315f8f-36f4-443c-bc35-52249b79807b"
                             },
                             {
                               "type": "text",
@@ -13889,7 +14783,7 @@
                                 "label": "Not Straightforward",
                                 "dataName": "notStreight",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),{#ULE},{#DE})",
+                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),\n           if({dateLast} <> {dateOfMissedCol}, if({dateLast} = '',\n\t\t\t\t\tconcat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system')),''),{#ULE},{#DE})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -13923,7 +14817,7 @@
                                 "label": "Need Checking",
                                 "dataName": "needCheck",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate},1,0)",
+                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -14214,11 +15108,45 @@
                             {
                               "type": "date",
                               "props": {
-                                "label": "Date of missed collection",
-                                "dataName": "dateOfMissedCol",
+                                "label": "Date from collection days lookup",
+                                "dataName": "dateLast",
                                 "labelPosition": "alignLeft",
                                 "defaultType": "specific",
                                 "defaultValue": "",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "hideWhenBlank": null,
+                                "displayAsSeparated": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumValue": "",
+                                "maximumValue": "",
+                                "dateFormat": "dd/MM/yyyy",
+                                "mandatoryMessage": "This field is required",
+                                "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                                "maximumValueMessage": "Please input a date no later than _max_value_",
+                                "dateFormatMessage": "Please input a date in the format _date_format_"
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-349ae987-80b7-4307-b818-93f73139d3a2"
+                            },
+                            {
+                              "type": "date",
+                              "props": {
+                                "label": "Date of missed collection",
+                                "dataName": "dateOfMissedCol",
+                                "labelPosition": "alignLeft",
+                                "defaultType": "text",
+                                "defaultValue": "{dateLast}",
                                 "helpText": "",
                                 "hidden": false,
                                 "readOnly": false,
@@ -14273,7 +15201,7 @@
                                 "mandatory": false,
                                 "minimumLength": "",
                                 "maximumLength": "",
-                                "validationCondition": "{dateOfMissedCol} <= {maxDate}",
+                                "validationCondition": "{dateOfMissedCol} <= {maxDate} or {allowReportBefore} = 'yes'",
                                 "validationMask": "",
                                 "mandatoryMessage": "This field is required",
                                 "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -14283,6 +15211,55 @@
                                 "validationMaskMessageValue": "Select..."
                               },
                               "id": "AF-Field-c2164d16-0637-478e-a884-32f0e8d6d588"
+                            },
+                            {
+                              "type": "checkbox",
+                              "props": {
+                                "minimumChoices": "",
+                                "maximumChoices": "",
+                                "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                                "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                                "label": "Allow report before 3pm",
+                                "dataName": "allowReportBefore",
+                                "labelPosition": "hideLabel",
+                                "defaultType": "specific",
+                                "defaultValue": null,
+                                "defaultValueText": null,
+                                "listSource": "one-time-list",
+                                "helpText": "",
+                                "readOnly": false,
+                                "allowOther": false,
+                                "summaryField": false,
+                                "lookup": null,
+                                "lookupCondition": null,
+                                "lookupButton": null,
+                                "preventRunningOnInitialisation": null,
+                                "noResultsMessage": null,
+                                "tokenName": null,
+                                "listOfValues": [
+                                  {
+                                    "label": "Let me log - I confirm I have checked Biffa.net",
+                                    "value": "yes"
+                                  }
+                                ],
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "width": null,
+                                "displayStyle": "vertical",
+                                "styleAsButton": null,
+                                "hideWhenBlank": null,
+                                "hidden": null,
+                                "displayCondition": "{checkAllowToday} isnt '' and {product} = 'Dash'",
+                                "selectCondition": null,
+                                "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "mandatoryMessage": "This field is required"
+                              },
+                              "id": "AF-Field-63315f8f-36f4-443c-bc35-52249b79807b"
                             },
                             {
                               "type": "text",
@@ -14582,7 +15559,7 @@
                                 "label": "Not Straightforward",
                                 "dataName": "notStreight",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),{#ULE},{#DE})",
+                                "defaultValue": "concat({#RESVIEW},{#UL},\n           {#LI}, {dayOfWeek}, ' ', dateFormat({dateOfMissedCol}, 'dd/MM-yyyy'),\n           if({prevMissed}='yes',concat({#LI},'Previous Missed Collection'),''),\n           if({timeOut}!='Before 7am',concat({#LI},'Was put out ',{timeOut}),''),\n           if({usualPoint}='no',concat({#LI},'Was not put out in usual place'),''),\n           if({dateLast} <> {dateOfMissedCol}, if({dateLast} = '',\n\t\t\t\t\tconcat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system')),''),{#ULE},{#DE})",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -14616,7 +15593,7 @@
                                 "label": "Need Checking",
                                 "dataName": "needCheck",
                                 "labelPosition": "alignLeft",
-                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate},1,0)",
+                                "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                                 "helpText": "",
                                 "hidden": true,
                                 "readOnly": true,
@@ -15251,11 +16228,60 @@
                 {
                   "type": "date",
                   "props": {
+                    "label": "Date from collection days lookup",
+                    "dataName": "dateLastRef",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "text",
+                    "defaultValue": "{lastRefDate}",
+                    "helpText": "",
+                    "hidden": true,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "hideWhenBlank": null,
+                    "displayAsSeparated": null,
+                    "displayCondition": "{missedComRubbish} isnt ''",
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumValue": "",
+                    "maximumValue": "",
+                    "dateFormat": "dd/MM/yyyy",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_"
+                  },
+                  "conditionInputs": [
+                    {
+                      "element": "select",
+                      "value": "missedComRubbish",
+                      "type": [
+                        "fields"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "isnt ''",
+                      "type": [
+                        "_select"
+                      ]
+                    }
+                  ],
+                  "id": "AF-Field-4048362e-17b3-46df-b5a4-6c747589e636"
+                },
+                {
+                  "type": "date",
+                  "props": {
                     "label": "Date of missed collection",
                     "dataName": "dateOfMisdCRub",
                     "labelPosition": "alignLeft",
-                    "defaultType": "specific",
-                    "defaultValue": "",
+                    "defaultType": "text",
+                    "defaultValue": "{dateLastRef}",
                     "helpText": "",
                     "hidden": false,
                     "readOnly": false,
@@ -15325,7 +16351,7 @@
                     "mandatory": false,
                     "minimumLength": "",
                     "maximumLength": "",
-                    "validationCondition": "{dateOfMisdCRub} <= {maxDate}",
+                    "validationCondition": "{dateOfMisdCRub} <= {maxDate} or {allowReportBeforeRub} = 'yes'",
                     "validationMask": "",
                     "mandatoryMessage": "This field is required",
                     "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -15335,6 +16361,55 @@
                     "validationMaskMessageValue": "Select..."
                   },
                   "id": "AF-Field-0f5ab487-543f-4b68-9910-e82e37b8c18d"
+                },
+                {
+                  "type": "checkbox",
+                  "props": {
+                    "minimumChoices": "",
+                    "maximumChoices": "",
+                    "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                    "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                    "label": "Allow report before 3pm",
+                    "dataName": "allowReportBeforeRub",
+                    "labelPosition": "hideLabel",
+                    "defaultType": "specific",
+                    "defaultValue": null,
+                    "defaultValueText": null,
+                    "listSource": "one-time-list",
+                    "helpText": "",
+                    "readOnly": false,
+                    "allowOther": false,
+                    "summaryField": false,
+                    "lookup": null,
+                    "lookupCondition": null,
+                    "lookupButton": null,
+                    "preventRunningOnInitialisation": null,
+                    "noResultsMessage": null,
+                    "tokenName": null,
+                    "listOfValues": [
+                      {
+                        "label": "Let me log - I confirm I have checked Biffa.net",
+                        "value": "yes"
+                      }
+                    ],
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "displayStyle": "vertical",
+                    "styleAsButton": null,
+                    "hideWhenBlank": null,
+                    "hidden": null,
+                    "displayCondition": "{checkAllowTodayCRub} isnt '' and {product} = 'Dash'",
+                    "selectCondition": null,
+                    "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "mandatoryMessage": "This field is required"
+                  },
+                  "id": "AF-Field-dc6df238-19b3-47d8-b50e-99411e9a72fe"
                 },
                 {
                   "type": "text",
@@ -15611,7 +16686,7 @@
                     "label": "communal rubbish needs check",
                     "dataName": "comRubNdCheck",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "if({dateOfMisdCRub} < {oldDate} or {comRubFull} = 'yes', 'yes', '')",
+                    "defaultValue": "if({dateOfMisdCRub} < {oldDate} or {comRubFull} = 'yes' or {dateLastRef} <> {dateOfMisdCRub}, 'yes', '')",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": true,
@@ -15719,11 +16794,60 @@
                 {
                   "type": "date",
                   "props": {
+                    "label": "Date from collection days lookup",
+                    "dataName": "dateLastRec",
+                    "labelPosition": "alignLeft",
+                    "defaultType": "text",
+                    "defaultValue": "{lastRecDate}",
+                    "helpText": "",
+                    "hidden": false,
+                    "readOnly": true,
+                    "summaryField": false,
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "hideWhenBlank": null,
+                    "displayAsSeparated": null,
+                    "displayCondition": "{missedComRecycling} isnt ''",
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "minimumValue": "",
+                    "maximumValue": "",
+                    "dateFormat": "dd/MM/yyyy",
+                    "mandatoryMessage": "This field is required",
+                    "minimumValueMessage": "Please input a date no earlier than _min_value_",
+                    "maximumValueMessage": "Please input a date no later than _max_value_",
+                    "dateFormatMessage": "Please input a date in the format _date_format_"
+                  },
+                  "conditionInputs": [
+                    {
+                      "element": "select",
+                      "value": "missedComRecycling",
+                      "type": [
+                        "fields"
+                      ]
+                    },
+                    {
+                      "element": "select",
+                      "value": "isnt ''",
+                      "type": [
+                        "_select"
+                      ]
+                    }
+                  ],
+                  "id": "AF-Field-33f46ff4-6e33-42ad-9078-8c09feae71b3"
+                },
+                {
+                  "type": "date",
+                  "props": {
                     "label": "Date of missed collection",
                     "dataName": "dateOfMisdCRec",
                     "labelPosition": "alignLeft",
-                    "defaultType": "specific",
-                    "defaultValue": "",
+                    "defaultType": "text",
+                    "defaultValue": "{dateLastRec}",
                     "helpText": "",
                     "hidden": false,
                     "readOnly": false,
@@ -15793,7 +16917,7 @@
                     "mandatory": false,
                     "minimumLength": "",
                     "maximumLength": "",
-                    "validationCondition": "{dateOfMisdCRec} <= {maxDate}",
+                    "validationCondition": "{dateOfMisdCRec} <= {maxDate} or {allowReportBeforeRec} = 'yes'",
                     "validationMask": "",
                     "mandatoryMessage": "This field is required",
                     "minimumLengthMessage": "Please input at least _min_value_ characters",
@@ -15803,6 +16927,55 @@
                     "validationMaskMessageValue": "Select..."
                   },
                   "id": "AF-Field-12feb9b6-d3c1-4467-8062-abcd4e3e3570"
+                },
+                {
+                  "type": "checkbox",
+                  "props": {
+                    "minimumChoices": "",
+                    "maximumChoices": "",
+                    "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                    "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                    "label": "Allow report before 3pm",
+                    "dataName": "allowReportBeforeRec",
+                    "labelPosition": "hideLabel",
+                    "defaultType": "specific",
+                    "defaultValue": null,
+                    "defaultValueText": null,
+                    "listSource": "one-time-list",
+                    "helpText": "",
+                    "readOnly": false,
+                    "allowOther": false,
+                    "summaryField": false,
+                    "lookup": null,
+                    "lookupCondition": null,
+                    "lookupButton": null,
+                    "preventRunningOnInitialisation": null,
+                    "noResultsMessage": null,
+                    "tokenName": null,
+                    "listOfValues": [
+                      {
+                        "label": "Let me log - I confirm I have checked Biffa.net",
+                        "value": "yes"
+                      }
+                    ],
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "displayStyle": "vertical",
+                    "styleAsButton": null,
+                    "hideWhenBlank": null,
+                    "hidden": null,
+                    "displayCondition": "{checkAllowTodayCRec} isnt '' and {product} = 'Dash'",
+                    "selectCondition": null,
+                    "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": false,
+                    "mandatoryMessage": "This field is required"
+                  },
+                  "id": "AF-Field-38af0556-e90e-420a-a81a-282e605cf170"
                 },
                 {
                   "type": "text",
@@ -16079,7 +17252,7 @@
                     "label": "communal recycling needs check",
                     "dataName": "comRecNdCheck",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "if({dateOfMisdCRec} < {oldDate} or {comRecycFull} = 'yes', 'yes', '')",
+                    "defaultValue": "if({dateOfMisdCRec} < {oldDate} or {comRecycFull} = 'yes' or {dateLastRec} <> {dateOfMisdCRec}, 'yes', '')",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": true,
@@ -17116,7 +18289,7 @@
                     "label": "Summary Not Streightforward",
                     "dataName": "sumNotStreight",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "concat(if({sfRubbish/needCheck}=1,{#sumRubbish},''),\n\t\tif({sfBatteries/needCheck}=1,{#sumBatteries},''),\n\t\tif({sfRecycling/needCheck}=1,{#sumRecycling},''),\n\t\tif({sfElectrical/needCheck}=1,{#sumElectrical},''),\n\t\tif({sfFoodWaste/needCheck}=1,{#sumFoodWaste},''),\n\t\tif({sfHealthcare/needCheck}=1,{#sumHealthcare},''),\n\t\tif({BulkyNeedCheck}=1,{#sumBulky},''),\n\t\tif({comRubFull} = 'yes',{#sumComRubbish},''),\n\t\tif({comRecycFull} = 'yes',{#sumComRecycling},'')\n\t\t)",
+                    "defaultValue": "concat(if({sfRubbish/needCheck}=1,{#sumRubbish},''),\n\t\tif({sfBatteries/needCheck}=1,{#sumBatteries},''),\n\t\tif({sfRecycling/needCheck}=1,{#sumRecycling},''),\n\t\tif({sfElectrical/needCheck}=1,{#sumElectrical},''),\n\t\tif({sfFoodWaste/needCheck}=1,{#sumFoodWaste},''),\n\t\tif({sfHealthcare/needCheck}=1,{#sumHealthcare},''),\n\t\tif({BulkyNeedCheck}=1,{#sumBulky},''),\n\t\tif({comRubNdCheck} = 'yes',{#sumComRubbish},''),\n\t\tif({comRecNdCheck} = 'yes',{#sumComRecycling},'')\n\t\t)",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": true,
@@ -17541,7 +18714,7 @@
                     "label": "sumComRubbish",
                     "dataName": "sumComRubbish",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "if({missedComRubbish}!='',concat({#ST},'Communal rubbish collecton',{#STE},{#NL},\n\t\t\t{#RESVIEW},{#UL},{#LI}, {dayOfWeek1}, ' ', dateFormat({dateOfMisdCRub}, 'dd/MM-yyyy'),\n                        if({comRubFull} = 'yes', concat({#LI},'Bin is overflowing'),''),{#ULE},{#DE},\n                        if({canKeepCRub} = 'yes', {#canKeepTXT}, '')),'')",
+                    "defaultValue": "if({missedComRubbish}!='',concat({#ST},'Communal rubbish collecton',{#STE},{#NL},\n\t\t\t{#RESVIEW},{#UL},{#LI}, {dayOfWeek1}, ' ', dateFormat({dateOfMisdCRub}, 'dd/MM-yyyy'),\n                        if({comRubFull} = 'yes', concat({#LI},'Bin is overflowing'),''),\n                        if({dateLastRef} <> {dateOfMisdCRub}, \n\t\t\t\t\t\t\t\tif({dateLastRef} = '', concat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system'))\n\t\t\t\t\t\t\t\t,''),{#ULE},{#DE},\n                        if({canKeepCRub} = 'yes', {#canKeepTXT}, '')),'')",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": true,
@@ -17575,7 +18748,7 @@
                     "label": "sumComRecycling",
                     "dataName": "sumComRecycling",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "if({missedComRecycling}!='',concat({#ST},'Communal recycling collection',{#STE},{#NL},\n\t\t\t{#RESVIEW},{#UL},{#LI}, {dayOfWeek2}, ' ', dateFormat({dateOfMisdCRec}, 'dd/MM-yyyy'),\nif({comRecycFull} = 'yes', concat({#LI},'Bin is overflowing'),''),{#ULE},\n                        if({canKeepCRec} = 'yes', {#canKeepTXT}, ''),{#DE}),'')",
+                    "defaultValue": "if({missedComRecycling}!='',concat({#ST},'Communal recycling collection',{#STE},{#NL},\n\t\t\t{#RESVIEW},{#UL},{#LI}, {dayOfWeek2}, ' ', dateFormat({dateOfMisdCRec}, 'dd/MM-yyyy'),\n\tif({comRecycFull} = 'yes', concat({#LI},'Bin is overflowing'),''),\n    if({dateLastRec} <> {dateOfMisdCRec}, \n\t\tif({dateLastRec} = '', concat({#LI},'Collection date could not be found'),\n\t\t\t\t\tconcat({#LI},'Resident picked date that doesn', {SQ}, 't match system'))\n\t\t\t\t\t\t\t\t,''),{#ULE},\n                        if({canKeepCRec} = 'yes', {#canKeepTXT}, ''),{#DE}),'')",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": true,
@@ -19915,6 +21088,21 @@
         {
           "label": "Type of recycling collection",
           "dataName": "recTypeMB",
+          "populated": true
+        },
+        {
+          "label": "Last Refuse collection date",
+          "dataName": "lastRefDate",
+          "populated": true
+        },
+        {
+          "label": "Last Recycling collection date",
+          "dataName": "lastRecDate",
+          "populated": true
+        },
+        {
+          "label": "Last Food Waste collection date",
+          "dataName": "lastFWDate",
           "populated": true
         },
         {

@@ -1,7 +1,7 @@
 USE [FStepMapInfo_prod]
 GO
 
-/****** Object:  StoredProcedure [dbo].[RecRubLastNextDaysCollectionForUPRN]    Script Date: 13/02/2023 15:27:49 ******/
+/****** Object:  StoredProcedure [dbo].[RecRubLastNextDaysCollectionForUPRN]    Script Date: 10/03/2023 11:41:57 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -33,8 +33,10 @@ BEGIN
 			,@recWeek as int
 			,@FWday as varchar(550)
 			,@FWType as varchar(550)
+			,@daysFW as varchar(550)
 			,@FWRound as varchar(550)
 			,@noRec as int
+			,@noFW as int
 			,@wrkDate as date
 			,@colWeek as int
 			,@endDate as date
@@ -43,6 +45,9 @@ BEGIN
 			,@electrical as varchar(50) = ''
 			,@refTypeMB as varchar(10)
 			,@recTypeMB as varchar(10)
+			,@lastRefDate as date
+			,@lastRecDate as date
+			,@lastFWDate as date
 	
 	DECLARE @Temp table (
 					[UPRN] int
@@ -161,6 +166,37 @@ BEGIN
 	IF @noRec > 3
 		SET @noRec = 1 + (@noRec - LEN(REPLACE(@daysRec, ',', '')))
 
+	SET @daysFW = dbo.listToFullDayNames(@FWday)
+
+	SET @noFW = LEN(@daysFW)
+	
+	IF @noFW > 3
+		SET @noFW = 1 + (@noFW - LEN(REPLACE(@daysFW, ',', '')))
+
+
+	SET @wrkDate = GETDATE()
+	SET @endDate = DATEADD(day, -15, GETDATE())
+
+	WHILE @wrkDate > @endDate AND (@lastRecDate is NULL OR @lastRefDate is NULL OR @lastFWDate is NULL)
+	BEGIN
+		SET @colWeek = dbo.RRcolectionWeek(@wrkDate)
+		SET @currDay = DATENAME(dw,@wrkDate)
+		
+		IF @lastRecDate is NULL AND (@recWeek = 0 OR @recWeek = @colWeek) AND CHARINDEX(@currDay, @daysRec) > 0
+			SET @lastRecDate = @wrkDate
+
+		IF @lastRefDate is NULL AND CHARINDEX(@currDay, @daysRef) > 0
+			SET @lastRefDate = @wrkDate
+
+		IF @lastFWDate is NULL AND CHARINDEX(@currDay, @daysFW) > 0
+			SET @lastFWDate = @wrkDate
+
+		SET @wrkDate = DATEADD(DD, -1,@wrkDate)
+
+	END
+
+
+
 	DECLARE @TempDates table (colDate	date NOT NULL,
 							  Diff		int,
 							  DayOfCol	varchar(50) NOT NULL,
@@ -206,6 +242,32 @@ BEGIN
 						(colDate, Diff, DayOfCol, DateOfCol, TypeOfCol, isExcep)
 					VALUES
 						(@useDate, ABS(DATEDIFF(day, @useDate, GETDATE())), @useFDay, dbo.friendlyDate(@useDate), 'Rubbish', @isExcep);
+			
+				SET @loopDate = DATEADD(day, 7, @loopDate)
+				SET @lcount = @lcount + 1
+				SET @chkCount = @chkCount + 1
+				IF @chkCount > 30
+					SET @lcount = @chkCount
+			END
+		END
+		IF CHARINDEX(@currDay, @daysFW) > 0
+		BEGIN
+			SET @loopDate = @wrkDate
+			SET @lcount = 1
+			SET @chkCount = 1
+			WHILE @lcount < 2
+			BEGIN
+				SET @useDate = @loopDate
+				--for the first one to display on summary of next collection 
+				IF @lcount <= @noRef
+					SET @useFDay = dbo.friendlyDay(@useDate)
+				ELSE
+					SET @useFDay = DATENAME(dw, @useDate)
+				
+				INSERT INTO @TempDates
+						(colDate, Diff, DayOfCol, DateOfCol, TypeOfCol, isExcep)
+					VALUES
+						(@useDate, ABS(DATEDIFF(day, @useDate, GETDATE())), @useFDay, dbo.friendlyDate(@useDate), 'Food Waste', @isExcep);
 			
 				SET @loopDate = DATEADD(day, 7, @loopDate)
 				SET @lcount = @lcount + 1
@@ -320,6 +382,28 @@ BEGIN
     
     SET @ResultText = @ResultText + 'Recycling' + @electrical + ' collection ' + ISNULL((SELECT top(1) DayOfCol from @TempDates where TypeOfCol = 'Recycling'  order by Diff), 'information not found');
 
+	IF @noFW = 2
+    BEGIN
+		SET @ResultText = @ResultText + '</strong></li><li><strong> - Food Waste collections: 
+							<ul><li><strong>' + ISNULL((SELECT top(1) DayOfCol 
+														  from @TempDates 
+														 where TypeOfCol = 'Food Waste'
+													  order by Diff), 'information not found') + '</strong></li>
+							<li><strong>' + ISNULL((SELECT DayOfCol 
+													from (SELECT ROW_NUMBER() over (order by Diff) as 'rowNum'
+																, DayOfCol 
+														    from @TempDates 
+														   where TypeOfCol = 'Food Waste') withRowNum 
+													where rowNum = 2), 'information not found');
+    END
+	ELSE IF @noFW = 1
+    BEGIN
+		SET @ResultText = @ResultText + '</strong></li><li><strong> - Food Waste collection ' + ISNULL((SELECT top(1) DayOfCol 
+																		  from @TempDates 
+																		 where TypeOfCol = 'Food Waste' 
+																	  order by Diff), 'information not found');
+    END
+
 
 	IF @refType like '%communal%'
 		SET @refTypeMB = 'comm'
@@ -344,6 +428,9 @@ BEGIN
 			,@FWRound as FWcrew
 			,@refTypeMB as refTypeMB
 			,@recTypeMB as recTypeMB
+			,@lastRecDate as lastRecDate
+		    ,@lastRefDate as lastRefDate
+			,@lastFWDate as lastFWDate
 END
 GO
 
