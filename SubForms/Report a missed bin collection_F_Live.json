@@ -75,6 +75,19 @@
     "hideSaveUrl": false,
     "usePHPIntegrations": true,
     "integrationDefinition": {
+      "5ecd2751258b4": {
+        "Editable": true,
+        "ID": "5ecd2751258b4",
+        "Name": "PM003 - display message in any form",
+        "Type": "DATABASE",
+        "LIM_name": "Portsmouth",
+        "Category": "z Global",
+        "data_type": "lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"systemID\":\"56f286c867311\",\"systemName\":\"CodeTables\",\"query\":\"exec ProcessMessageInForm\\n\\t@ProcessID = {process_id}\\n\\t,@productO = {product}\\n\\t,@caseRefo = {case_ref}\\n\\t,@stageO = {stage_name}\\n\\t\\t\\t   ,@processNm = {process_name}\\n\\t\\t\\t   ,@stageCd = {stageCode}\",\"results_page_columns_db\":\"\",\"secure_fields_db_database\":\"\",\"escapeTokens\":\"yes\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_name\":\"LIM14\",\"recipients_to\":\"daniel.gregory@portsmouthcc.gov.uk\"}"
+      },
       "590c3dc26118c": {
         "Editable": true,
         "ID": "590c3dc26118c",
@@ -294,6 +307,337 @@
       "name": "Introduction",
       "fields": [
         {
+          "type": "subform",
+          "props": {
+            "label": "msg",
+            "dataName": "msg1",
+            "labelPosition": "hideLabel",
+            "formName": "SFG_Message on the form",
+            "form": "AF-Form-85eb7f01-47c6-4f6a-96d4-b4319c70c050",
+            "displayStyle": "summary",
+            "lookup": "",
+            "lookupCondition": "once",
+            "preventRunningOnInitialisation": false,
+            "lookupButton": null,
+            "noResultsMessage": "",
+            "hidden": false,
+            "readOnly": false,
+            "repeatable": false,
+            "displayName": "true",
+            "outerClass": "pccMsgHide",
+            "labelClass": "",
+            "inputClass": "",
+            "buttonText": "Add Record",
+            "popupTitle": "",
+            "totalColumn": null,
+            "tablePosition": "top",
+            "disableAdd": false,
+            "disableEdit": false,
+            "disableDelete": false,
+            "disableAddOnCalculations": false,
+            "displayCondition": "",
+            "mandatoryCondition": null,
+            "readonlyCondition": null,
+            "mandatory": false,
+            "minimumRepeats": "1",
+            "maximumRepeats": "",
+            "mandatoryMessage": "This field is required",
+            "minimumRepeatsMessage": "Not enough entries",
+            "maximumRepeatsMessage": "Too many entries",
+            "formId": "AF-Form-85eb7f01-47c6-4f6a-96d4-b4319c70c050",
+            "subformDefinition": {
+              "formName": "SFG_Message on the form",
+              "formDescription": "",
+              "props": {
+                "id": "AF-Form-85eb7f01-47c6-4f6a-96d4-b4319c70c050",
+                "category": "",
+                "saveSubmissionData": true,
+                "usePHPIntegrations": true,
+                "serverSideLookupValidation": false,
+                "tags": "",
+                "navigateAwayWarning": "Are you sure you want to navigate away? All progress in this form will be lost.",
+                "navigateAwayWarn": true,
+                "validateOnInit": true,
+                "stopOnFailure": false,
+                "stickyError": false,
+                "showFormReference": false,
+                "mustBeValid": true,
+                "hideHeader": false,
+                "isPublished": false,
+                "isSubform": true,
+                "integrations": [],
+                "notes": false,
+                "submission": {
+                  "message": "<p>Your reference number is {summary_ref}.</p><p>Thank you for submitting {form_name}</p><p>{visiblesummary}</p>",
+                  "api": "/form/submit/",
+                  "download": "Download PDF",
+                  "cancel_redirect": null,
+                  "continue": "Continue",
+                  "conditionInputs": "",
+                  "showDownload": true,
+                  "showMessage": true,
+                  "serverSubmit": false,
+                  "redirect": null,
+                  "condition": "",
+                  "printableIntegrationId": ""
+                },
+                "save": {
+                  "lim": "3f07ecf4-0dfa-11e2-b0b9-12313b03ed59",
+                  "displayCondition": "",
+                  "conditionInputs": "",
+                  "redirect": null,
+                  "allow": false,
+                  "fromName": "",
+                  "message": "",
+                  "subject": "",
+                  "mail": false,
+                  "from": ""
+                }
+              },
+              "sections": [
+                {
+                  "url": "Section-1.html",
+                  "id": "AF-Section-dd23b743-6880-400b-b4f8-65edbbef9c4e",
+                  "props": {
+                    "hideCancel": false,
+                    "conditionInputs": "",
+                    "displayCondition": "",
+                    "validationInputs": "",
+                    "validation": "",
+                    "validationMessage": "This Section is Invalid",
+                    "validationLookup": {
+                      "enableLookup": false,
+                      "lookupID": "",
+                      "lookupName": "",
+                      "lookupValidation": "",
+                      "lookupOperator": ""
+                    }
+                  },
+                  "name": "Section 1",
+                  "fields": [
+                    {
+                      "type": "html",
+                      "props": {
+                        "label": "html 2",
+                        "dataName": "html2",
+                        "displayName": "",
+                        "outerClass": "hidden",
+                        "width": "",
+                        "showInSummary": false,
+                        "content": "<style>\n    .pccMsgHide {\n        display:{pccNone};\n    }\n    [data-field-name=\"msg1\"] {\n        padding-top:0em!important;\n    }\n    [data-field-name=\"msg\"] {\n        padding-top:0em!important;\n    }\n</style>",
+                        "displayCondition": null
+                      },
+                      "conditionInputs": [],
+                      "id": "AF-Field-5f06b2db-8a9d-4665-b24c-9c9c17da3135"
+                    },
+                    {
+                      "type": "textarea",
+                      "props": {
+                        "label": "Message",
+                        "dataName": "message",
+                        "labelPosition": "alignLeft",
+                        "defaultValue": "",
+                        "helpText": "",
+                        "hidden": true,
+                        "readOnly": true,
+                        "summaryField": false,
+                        "displayName": true,
+                        "outerClass": null,
+                        "labelClass": null,
+                        "inputClass": null,
+                        "width": null,
+                        "lengthCount": null,
+                        "hideWhenBlank": null,
+                        "displayCondition": null,
+                        "mandatoryCondition": null,
+                        "readonlyCondition": null,
+                        "mandatory": false,
+                        "minimumLength": "",
+                        "maximumLength": "",
+                        "validationMask": "",
+                        "mandatoryMessage": "This field is required",
+                        "minimumLengthMessage": "Please input at least _min_value_ characters",
+                        "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                        "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                        "validationMaskMessageValue": "Select..."
+                      },
+                      "conditionInputs": [],
+                      "id": "AF-Field-0c0a8950-59f3-4b26-b2c4-15a81b3fa372"
+                    },
+                    {
+                      "type": "autoLookup",
+                      "props": {
+                        "label": "autoLookup 1",
+                        "dataName": "autolookup1",
+                        "lookup": "5ecd2751258b4",
+                        "lookupCondition": "once",
+                        "lookupButton": null,
+                        "noResultsMessage": "",
+                        "noRetryOnIntegrationFailure": false,
+                        "preventRunningOnInitialisation": false,
+                        "displayName": "",
+                        "displayCondition": null
+                      },
+                      "conditionInputs": [],
+                      "id": "AF-Field-deb3c05e-8ca7-4880-bf25-372cc2cc4e12"
+                    },
+                    {
+                      "type": "html",
+                      "props": {
+                        "label": "html 1",
+                        "dataName": "html1",
+                        "displayName": "",
+                        "outerClass": "",
+                        "width": "",
+                        "showInSummary": false,
+                        "content": "{#message}",
+                        "displayCondition": "{message} isnt ''"
+                      },
+                      "conditionInputs": [
+                        {
+                          "element": "select",
+                          "value": "message",
+                          "type": [
+                            "fields"
+                          ]
+                        },
+                        {
+                          "element": "select",
+                          "value": "isnt ''",
+                          "type": [
+                            "_core"
+                          ]
+                        }
+                      ],
+                      "id": "AF-Field-5e7f2ab3-7a7b-46f0-9a7d-95d51858b64d"
+                    },
+                    {
+                      "type": "text",
+                      "props": {
+                        "label": "after message",
+                        "dataName": "afterMessage",
+                        "labelPosition": "hideLabel",
+                        "defaultValue": "{stopOnNoTB}",
+                        "helpText": "This will be set to continue from the integration if it is not blank and value isn't continue then the message 'Form currently unavailable' will be displayed if they try and submit or go to next page.",
+                        "hidden": true,
+                        "readOnly": true,
+                        "summaryField": false,
+                        "displayName": true,
+                        "outerClass": null,
+                        "labelClass": null,
+                        "inputClass": null,
+                        "outputFormat": "normal",
+                        "currencyPrefix": null,
+                        "width": null,
+                        "inputMask": null,
+                        "inputMaskPlaceholder": null,
+                        "lengthCount": null,
+                        "hideWhenBlank": null,
+                        "displayCondition": null,
+                        "mandatoryCondition": "{noDBResponse} = 'stop'",
+                        "readonlyCondition": "",
+                        "mandatory": false,
+                        "minimumLength": "",
+                        "maximumLength": "",
+                        "validationCondition": "{afterMessage} = 'continue'",
+                        "validationMask": "",
+                        "mandatoryMessage": "Form currently unavailable connection issues",
+                        "minimumLengthMessage": "Please input at least _min_value_ characters",
+                        "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                        "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                        "validationConditionMessage": "Form currently unavailable",
+                        "validationMaskMessageValue": "Select..."
+                      },
+                      "conditionInputs": [],
+                      "id": "AF-Field-96db7e93-36e2-41c3-a41b-2bee1d0a384b"
+                    },
+                    {
+                      "type": "text",
+                      "props": {
+                        "label": "for displaying as none when no message",
+                        "dataName": "pccNone",
+                        "labelPosition": "alignLeft",
+                        "defaultValue": "if({message} isnt '', '', 'none')",
+                        "helpText": "",
+                        "hidden": true,
+                        "readOnly": true,
+                        "summaryField": false,
+                        "displayName": true,
+                        "outerClass": null,
+                        "labelClass": null,
+                        "inputClass": null,
+                        "outputFormat": "normal",
+                        "currencyPrefix": null,
+                        "width": null,
+                        "inputMask": null,
+                        "inputMaskPlaceholder": null,
+                        "lengthCount": null,
+                        "hideWhenBlank": null,
+                        "displayCondition": "",
+                        "mandatoryCondition": null,
+                        "readonlyCondition": null,
+                        "mandatory": false,
+                        "minimumLength": "",
+                        "maximumLength": "",
+                        "validationCondition": "",
+                        "validationMask": "",
+                        "mandatoryMessage": "This field is required",
+                        "minimumLengthMessage": "Please input at least _min_value_ characters",
+                        "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                        "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                        "validationConditionMessage": "This field is invalid",
+                        "validationMaskMessageValue": "Select..."
+                      },
+                      "id": "AF-Field-76b2f7c0-24c9-43a3-95fd-f82dc8429e1a"
+                    },
+                    {
+                      "type": "text",
+                      "props": {
+                        "label": "Stage code",
+                        "dataName": "stageCode",
+                        "labelPosition": "alignLeft",
+                        "defaultValue": "{stage_id}",
+                        "helpText": "",
+                        "hidden": true,
+                        "readOnly": true,
+                        "summaryField": false,
+                        "displayName": true,
+                        "outerClass": null,
+                        "labelClass": null,
+                        "inputClass": null,
+                        "outputFormat": "normal",
+                        "currencyPrefix": null,
+                        "width": null,
+                        "inputMask": null,
+                        "inputMaskPlaceholder": null,
+                        "lengthCount": null,
+                        "hideWhenBlank": null,
+                        "displayCondition": null,
+                        "mandatoryCondition": null,
+                        "readonlyCondition": null,
+                        "mandatory": false,
+                        "minimumLength": "",
+                        "maximumLength": "",
+                        "validationCondition": "",
+                        "validationMask": "",
+                        "mandatoryMessage": "This field is required",
+                        "minimumLengthMessage": "Please input at least _min_value_ characters",
+                        "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                        "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                        "validationConditionMessage": "This field is invalid",
+                        "validationMaskMessageValue": "Select..."
+                      },
+                      "conditionInputs": [],
+                      "id": "AF-Field-ef054459-7071-4249-a4a2-22b1cf34cea6"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "id": "AF-Field-17fbb54d-cf21-4d49-9d66-0c148454bf30"
+        },
+        {
           "type": "html",
           "props": {
             "label": "html 1",
@@ -302,7 +646,7 @@
             "outerClass": "",
             "width": "",
             "showInSummary": false,
-            "content": "{#testFormWarn} \n<p><strong>If you think your waste collection has been missed, you can let us know by completing this form.</strong></p>\n<br />\n<p>Before you start, please check that:</p>\n<ul>\n    <li>You are sure of the collection day.</li>\n    <li>The waste type (rubbish, recycling, bulky waste or healthcare) is only from a household and contains this type of waste <strong>only</strong>, as there are some types of waste that we don't collect.  You can find more information about this below.</li>\n    <li>If there is a red hanger on your recycling bin, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/recycling-and-rubbish/recycling#hanger\">find out what you can recycle at home</a>.</li>\n</ul>\n<br />\n<p>Find out more about <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/rubbish\">rubbish</a>, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/recycling\">recycling</a> or <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/other-waste\">other waste collections</a>.</p>\n<br />\n\n<!--<p style=\"color:blue\"><strong>Important notice:</strong> all missed collections must be reported within 2 working days of the scheduled collection date. If it is reported later, we will not return.</p>\n\n<p style=\"color:blue\">Please do not report the same missed collection several times as it only duplicates the information and slows down our response time.</p>-->",
+            "content": "{#testFormWarn} \n<p><strong>If you think your waste collection has been missed, you can let us know by completing this form.</strong></p>\n<br />\n<p>Before you start, please check that:</p>\n<ul>\n    <li>You are sure of the collection day.</li>\n    <li>The waste type (rubbish, recycling, bulky waste or healthcare) is only from a household and contains this type of waste <strong>only</strong>, as there are some types of waste that we don't collect.  You can find more information about this below.</li>\n    <li>If there is a red hanger on your recycling bin, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/services/recycling-and-rubbish/contaminated-recycling-bins/\">please read more about what this means here</a>.</li>\n</ul>\n<br />\n<p>Find out more about <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/rubbish\">rubbish</a>, <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/recycling\">recycling</a> or <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/other-waste\">other waste collections</a>.</p>\n<br />\n\n<!--<p style=\"color:blue\"><strong>Important notice:</strong> all missed collections must be reported within 2 working days of the scheduled collection date. If it is reported later, we will not return.</p>\n\n<p style=\"color:blue\">Please do not report the same missed collection several times as it only duplicates the information and slows down our response time.</p>-->",
             "displayCondition": null
           },
           "conditionInputs": [],
@@ -2529,7 +2873,7 @@
                       "type": "text",
                       "id": "AF-Field-0b8b8ef6-db89-4abe-8a9e-effa2c569a05",
                       "props": {
-                        "label": "House",
+                        "label": "House number or name",
                         "dataName": "house_out1",
                         "labelPosition": "alignLeft",
                         "defaultValue": "",
@@ -7798,7 +8142,7 @@
                       "type": "text",
                       "id": "AF-Field-f5fc44b0-51e7-44c5-9ec3-a429be2c775e",
                       "props": {
-                        "label": "House",
+                        "label": "House number or name",
                         "dataName": "house_out1",
                         "labelPosition": "alignLeft",
                         "defaultValue": "",
@@ -11132,8 +11476,12 @@
                         "tokenName": null,
                         "listOfValues": [
                           {
-                            "label": "Before 7am",
-                            "value": "Before 7am"
+                            "label": "Before 6am",
+                            "value": "Before 6am"
+                          },
+                          {
+                            "label": "6 - 7am",
+                            "value": "6 - 7am"
                           },
                           {
                             "label": "7 - 8am",
@@ -11310,7 +11658,7 @@
                         "label": "Need Checking",
                         "dataName": "needCheck",
                         "labelPosition": "alignLeft",
-                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                         "helpText": "",
                         "hidden": true,
                         "readOnly": true,
@@ -11961,8 +12309,12 @@
                         "tokenName": null,
                         "listOfValues": [
                           {
-                            "label": "Before 7am",
-                            "value": "Before 7am"
+                            "label": "Before 6am",
+                            "value": "Before 6am"
+                          },
+                          {
+                            "label": "6 - 7am",
+                            "value": "6 - 7am"
                           },
                           {
                             "label": "7 - 8am",
@@ -12139,7 +12491,7 @@
                         "label": "Need Checking",
                         "dataName": "needCheck",
                         "labelPosition": "alignLeft",
-                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                         "helpText": "",
                         "hidden": true,
                         "readOnly": true,
@@ -12759,8 +13111,12 @@
                         "tokenName": null,
                         "listOfValues": [
                           {
-                            "label": "Before 7am",
-                            "value": "Before 7am"
+                            "label": "Before 6am",
+                            "value": "Before 6am"
+                          },
+                          {
+                            "label": "6 - 7am",
+                            "value": "6 - 7am"
                           },
                           {
                             "label": "7 - 8am",
@@ -12937,7 +13293,7 @@
                         "label": "Need Checking",
                         "dataName": "needCheck",
                         "labelPosition": "alignLeft",
-                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                         "helpText": "",
                         "hidden": true,
                         "readOnly": true,
@@ -13589,8 +13945,12 @@
                         "tokenName": null,
                         "listOfValues": [
                           {
-                            "label": "Before 7am",
-                            "value": "Before 7am"
+                            "label": "Before 6am",
+                            "value": "Before 6am"
+                          },
+                          {
+                            "label": "6 - 7am",
+                            "value": "6 - 7am"
                           },
                           {
                             "label": "7 - 8am",
@@ -13767,7 +14127,7 @@
                         "label": "Need Checking",
                         "dataName": "needCheck",
                         "labelPosition": "alignLeft",
-                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                         "helpText": "",
                         "hidden": true,
                         "readOnly": true,
@@ -14366,8 +14726,12 @@
                         "tokenName": null,
                         "listOfValues": [
                           {
-                            "label": "Before 7am",
-                            "value": "Before 7am"
+                            "label": "Before 6am",
+                            "value": "Before 6am"
+                          },
+                          {
+                            "label": "6 - 7am",
+                            "value": "6 - 7am"
                           },
                           {
                             "label": "7 - 8am",
@@ -14544,7 +14908,7 @@
                         "label": "Need Checking",
                         "dataName": "needCheck",
                         "labelPosition": "alignLeft",
-                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                         "helpText": "",
                         "hidden": true,
                         "readOnly": true,
@@ -15142,8 +15506,12 @@
                         "tokenName": null,
                         "listOfValues": [
                           {
-                            "label": "Before 7am",
-                            "value": "Before 7am"
+                            "label": "Before 6am",
+                            "value": "Before 6am"
+                          },
+                          {
+                            "label": "6 - 7am",
+                            "value": "6 - 7am"
                           },
                           {
                             "label": "7 - 8am",
@@ -15320,7 +15688,7 @@
                         "label": "Need Checking",
                         "dataName": "needCheck",
                         "labelPosition": "alignLeft",
-                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+                        "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
                         "helpText": "",
                         "hidden": true,
                         "readOnly": true,
@@ -15485,7 +15853,7 @@
             "styleAsButton": true,
             "hideWhenBlank": false,
             "hidden": false,
-            "displayCondition": "{SelfDash} contains 'Dash'",
+            "displayCondition": "{SelfDash} contains 'Dash' or {SelfDash} contains 'Forms'",
             "selectCondition": null,
             "mandatoryCondition": null,
             "readonlyCondition": null,
@@ -15510,6 +15878,34 @@
             {
               "element": "text",
               "value": "Dash",
+              "type": [
+                "literal"
+              ]
+            },
+            {
+              "element": "select",
+              "value": "or",
+              "type": [
+                "logicalOperators"
+              ]
+            },
+            {
+              "element": "select",
+              "value": "SelfDash",
+              "type": [
+                "fields"
+              ]
+            },
+            {
+              "element": "select",
+              "value": "contains",
+              "type": [
+                "_core"
+              ]
+            },
+            {
+              "element": "text",
+              "value": "Forms",
               "type": [
                 "literal"
               ]
@@ -15692,8 +16088,12 @@
             "tokenName": null,
             "listOfValues": [
               {
-                "label": "Before 7am",
-                "value": "Before 7am"
+                "label": "Before 6am",
+                "value": "Before 6am"
+              },
+              {
+                "label": "6 - 7am",
+                "value": "6 - 7am"
               },
               {
                 "label": "7 - 8am",
@@ -15712,22 +16112,23 @@
                 "value": "after 10am"
               }
             ],
-            "displayName": true,
-            "outerClass": null,
-            "labelClass": null,
-            "inputClass": null,
-            "width": null,
+            "displayName": "true",
+            "outerClass": "",
+            "labelClass": "",
+            "inputClass": "",
+            "width": "8",
             "selectLabel": "Select...",
             "allowMultiple": false,
-            "hideWhenBlank": null,
-            "hidden": null,
+            "hideWhenBlank": false,
+            "hidden": false,
             "enableFilter": false,
             "displayCondition": "{missedBulky} isnt ''",
             "selectCondition": null,
             "mandatoryCondition": null,
             "readonlyCondition": null,
             "mandatory": true,
-            "mandatoryMessage": "This field is required"
+            "mandatoryMessage": "This field is required",
+            "disableEmptyValue": false
           },
           "id": "AF-Field-ca60ce7a-53e1-42fa-9b8c-0c6c397edde8",
           "conditionInputs": [
@@ -15851,7 +16252,7 @@
             "label": "Bulky Need Checking",
             "dataName": "BulkyNeedCheck",
             "labelPosition": "alignLeft",
-            "defaultValue": "if(({bulkyTimeOut}!='Before 7am' and {bulkyTimeOut}!='') \n    or {bulkyUsualPoint}='no'\n    or {dateOfMisdBulk} < {oldDate},1,0)",
+            "defaultValue": "if(({bulkyTimeOut}!='Before 6am' and {bulkyTimeOut}!='') \n    or {bulkyUsualPoint}='no'\n    or {dateOfMisdBulk} < {oldDate},1,0)",
             "helpText": "",
             "hidden": true,
             "readOnly": true,
@@ -16025,7 +16426,7 @@
             "readonlyCondition": null,
             "mandatory": true,
             "minimumValue": "{furthestBack}",
-            "maximumValue": "{maxDate}",
+            "maximumValue": "{today}",
             "dateFormat": "dd/MM/yyyy",
             "mandatoryMessage": "This field is required",
             "minimumValueMessage": "Please input a date no earlier than _min_value_",

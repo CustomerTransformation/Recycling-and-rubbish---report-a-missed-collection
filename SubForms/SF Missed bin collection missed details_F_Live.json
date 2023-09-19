@@ -383,8 +383,12 @@
             "tokenName": null,
             "listOfValues": [
               {
-                "label": "Before 7am",
-                "value": "Before 7am"
+                "label": "Before 6am",
+                "value": "Before 6am"
+              },
+              {
+                "label": "6 - 7am",
+                "value": "6 - 7am"
               },
               {
                 "label": "7 - 8am",
@@ -561,7 +565,7 @@
             "label": "Need Checking",
             "dataName": "needCheck",
             "labelPosition": "alignLeft",
-            "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 7am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
+            "defaultValue": "if({prevMissed}='yes' \n    or ({timeOut}!='Before 6am' and {timeOut}!='') \n    or {usualPoint}='no'\n    or {dateOfMissedCol} < {oldDate}\n    or {dateLast} <> {dateOfMissedCol},1,0)",
             "helpText": "",
             "hidden": true,
             "readOnly": true,
